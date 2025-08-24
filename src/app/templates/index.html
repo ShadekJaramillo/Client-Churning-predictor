@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes alert model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        h3 {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Client Churning Prediction</h1>
+    <h2>Introduce the values</h2>
+    
+    <form action="/" method="post">
+        Age: <input type="number" step="any" name="Age" required><br><br>
+        Gender:<br>
+            <input type="radio" id="gender_male" name="Gender" value="Male" required>
+            <label for="gender_male">Male</label><br>
+            <input type="radio" id="gender_female" name="Gender" value="Female">
+            <label for="gender_female">Female</label><br>
+            <input type="radio" id="gender_other" name="Gender" value="Other">
+            <label for="gender_other">Other</label><br><br>
+        Months Being Client: <input type="number" step="any" name="Tenure" required><br><br>
+        Preferred Device:<br>
+            <input type="radio" id="device_mobile" name="PreferredLoginDevice" value="Mobile" required>
+            <label for="device_mobile">Mobile</label><br>
+            <input type="radio" id="device_computer" name="PreferredLoginDevice" value="Desktop">
+            <label for="device_computer">Computer</label><br><br>
+        City Tier: <input type="number" step="any" name="CityTier" required><br><br>
+        Warehouse To Home Distance (km): <input type="number" step="any" name="WarehouseToHome" required><br><br>
+        Hours Spent On App (per week): <input type="number" step="any" name="HoursSpentOnApp" required><br><br>
+        Number Of Devices Registered: <input type="number" step="any" name="NumberOfDevicesRegistered" required><br><br>
+        Satisfaction Score: <input type="number" step="any" name="SatisfactionScore" required><br><br>
+        Number Of Address: <input type="number" step="any" name="NumberOfAddress" required><br><br>
+        Has complained?:<br>
+            <input type="radio" id="complain_yes" name="Complain" value="1" required>
+            <label for="complain_yes">Yes</label><br>
+            <input type="radio" id="complain_no" name="Complain" value="0">
+            <label for="complain_no">No</label><br><br>
+        Order Count: <input type="number" step="any" name="OrderCount" required><br><br>
+        Days Since Last Order: <input type="number" step="any" name="DaySinceLastOrder" required><br><br>
+        Cashback Amount: <input type="number" step="any" name="CashbackAmount" required><br><br>
+        <input type="submit" value="Predict">
+    </form>
+    
+    {% if prediction != None %}
+        <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
