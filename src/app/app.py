@@ -2,7 +2,11 @@ from flask import Flask, request, render_template
 from pickle import load
 from pathlib import Path
 from pandas import DataFrame
+from dotenv import load_dotenv
 import os
+
+project_root_dir = Path(__file__).parent.parent.parent
+load_dotenv(project_root_dir.joinpath('.env'))
 
 app = Flask(__name__)
 model_path = Path(__file__).parent.parent.parent/'models'/'AdaBoost_learning_rate_1.5_n_estimators_300_random_state_42.sav'
@@ -23,7 +27,8 @@ def index():
     return render_template("index.html", prediction=message)
 
 if __name__ == '__main__':
-    if os.name == 'nt':
+    environment = os.getenv('FLASK_ENV', 'production')
+    if environment == 'development':
         from waitress import serve
         port = 5000
         host = '127.0.0.1'
