@@ -6,6 +6,8 @@ You can download the data for the project at <https://www.kaggle.com/datasets/su
 
 You also can find the working application showing how the model works at <https://client-churning-predictor.onrender.com/>.
 
+Or alternatively you can use our second application made using streamlit at <https://client-churning-predictor-trkxdunqjtmcsktfjtagby.streamlit.app/>
+
 ## Initial Setup in Codespaces (Recommended)
 
 No manual setup is required, as **Codespaces is automatically configured** with the predefined files created by the academy for you. Just follow these steps:
